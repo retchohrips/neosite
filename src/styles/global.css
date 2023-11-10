@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: Customize color themes */
+/* TODO #4: Customize color themes */
 @layer base {
 	:root {
 		color-scheme: light;

@@ -9,7 +9,6 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
-	// TODO: replace the following site property with personal domain
 	site: "https://astro-cactus.chriswilliams.dev/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
