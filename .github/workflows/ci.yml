@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Check for build and type issues
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+        # use astro check for issues
+      - name: Run check
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: astro check
+
+        # ensure build works
+      - name: Run build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
