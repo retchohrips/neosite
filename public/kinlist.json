@@ -1,0 +1,181 @@
+[
+	{
+		"tier": 1,
+		"name": "Jeremy Heere",
+		"source": "Be More Chill",
+
+		"image": {
+			"url": "https://64.media.tumblr.com/40fc31ed0b57842cba43b136fd81570c/tumblr_oq62bunPVS1ulaujio2_400.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 1,
+		"name": "Hajime Hinata",
+		"source": "Danganronpa",
+		"image": {
+			"url": "https://64.media.tumblr.com/3ab66fdb8e32fbfae6d32f2525798741/0c598c17a456658e-b0/s1280x1920/f51b7ff695cc6bb3adf1f950204a4377138caab8.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 1,
+		"name": "Angel Devil",
+		"source": "Chainsaw Man",
+		"image": {
+			"url": "https://64.media.tumblr.com/6517ef6cc7864b7067e77548da53d5ff/365082e74d25b624-27/s500x750/daada1bf93041951b4bc7857c0e9f863452e7a86.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 1,
+		"name": "Kokichi Oma",
+		"source": "Danganronpa",
+		"image": {
+			"url": "https://64.media.tumblr.com/df952b2b33584534e894c7added2e79d/ed666c7f469f3622-8b/s1280x1920/368c22b2e7ebddfa7fa55076d8483bbbc500b54e.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Abed Nadir",
+		"source": "Community",
+		"image": {
+			"url": "https://64.media.tumblr.com/302a309e21252915b87309f8b6cfb5db/8e9c3ec5b2c95872-eb/s500x750/06108f02d74fa55d3eddd5512829b1a1f04efdea.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Dave Strider",
+		"source": "Homestuck",
+		"image": {
+			"url": "https://64.media.tumblr.com/2df6140a992393b015a407c8f2ac78ca/e8ed68b695b3aa3e-fd/s1280x1920/8cdd492a675b3795fa268e3b4b6ca8064bcc1b6e.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Eddie Kaspbrak",
+		"source": "IT",
+		"image": {
+			"url": "https://64.media.tumblr.com/afc3c548e92600bc96ce692475d8623e/c62e748f3b68b951-d4/s640x960/63b9bab8f62f43fd4d8f0fd881ec2b1e2c3f0ebd.jpg"
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Cecil Palmer",
+		"source": "Welcome to Night Vale",
+		"image": {
+			"url": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Edward Nygma",
+		"source": "DC",
+		"image": {
+			"url": "https://64.media.tumblr.com/425cba7e2eef37b2c5c78dcce48d079b/ba6bb1f88dbf28d8-19/s2048x3072/42ef8646fe385a2c1e5893e3a5dbce10e1f32f7f.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Veronica Sawyer",
+		"source": "Heathers",
+		"image": {
+			"url": "https://64.media.tumblr.com/c6785502078e0bfeb1255d8322f58252/e24f1535e1c0c988-cc/s400x600/02dfb9b5f8413a73af2dd6ebecafef821d40f0d7.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 2,
+		"name": "Cabinet Man",
+		"source": "Spirit Phone",
+		"image": {
+			"url": "https://64.media.tumblr.com/b51d75ace1d6b95c8602448754168ea5/b8cbf88e0bc35775-55/s2048x3072/ed2e7950ea3c3647c59aafaf8913087e8da7ecd3.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 3,
+		"name": "Nepeta Leijon",
+		"source": "Homestuck",
+		"image": {
+			"url": "https://64.media.tumblr.com/69fbe7d8757d171e90c92f03ef2f71eb/744a5d3607b771a9-64/s540x810/e733398cf0886aec9f0ca3b99a66b48904261412.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 3,
+		"name": "Marty McFly",
+		"source": "Back to the Future",
+		"image": {
+			"url": "https://64.media.tumblr.com/af0ae357f9c7462df978c92761c93c63/495ddd6a1aebba30-0d/s1280x1920/45d5182e6a35b30cb70882cb02aa275b4576d0e8.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 3,
+		"name": "The Mangle",
+		"source": "Five Night's at Freddy's",
+		"image": {
+			"url": "https://64.media.tumblr.com/bb6c289047e4a03b149926f7745e472e/9ba220d9c0a940fe-98/s400x600/2e26c1a5afb879d1c2649a8abac8fc00e4486390.pnj",
+			"alt": ""
+		}
+	},
+	{
+		"tier": 3,
+		"name": "Kit Walker",
+		"source": "American Horror Story",
+		"image": {
+			"url": "https://64.media.tumblr.com/f43ec423ced32a2fc23c21ea895c5b33/b790b2f40cee1b34-32/s540x810/306afa6e15f6bf50c5623e9d61d555c5c4384182.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": "other",
+		"name": "Rabbit",
+		"image": { "url": "https://weknowyourdreams.com/images/rabbit/rabbit-05.jpg" }
+	},
+	{
+		"tier": "other",
+		"name": "Jackalope",
+		"image": {
+			"url": "https://1.bp.blogspot.com/-T-215ibDcmg/XpSN2kkUBUI/AAAAAAAA9gs/fAeb-2UD5qoZmLoyCnu3ys6pRa8X5YEpwCLcBGAsYHQ/s0/jackalope.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": "other",
+		"name": "White-Tailed Deer",
+		"image": {
+			"url": "https://upload.wikimedia.org/wikipedia/commons/0/09/White-tailed_deer_at_Greenough_Park%2C_Missoula.JPG",
+			"alt": ""
+		}
+	},
+	{
+		"tier": "other",
+		"name": "Sheep",
+		"image": {
+			"url": "https://i.ibb.co/R32vTVZ/Screenshot-2023-07-04-200400.png",
+			"alt": ""
+		}
+	},
+	{
+		"tier": "other",
+		"name": "Welsh Springer Spaniel",
+		"image": {
+			"url": "http://yesofcorsa.com/wp-content/uploads/2017/10/The-Welsh-Springer-Spaniel-Wallpaper.jpg",
+			"alt": ""
+		}
+	},
+	{
+		"tier": "other",
+		"name": "Nova Scotia Duck Tolling Retriever",
+		"image": {
+			"url": "https://i.pinimg.com/originals/f3/bf/24/f3bf243f8a4971c648814a805632abf9.jpg",
+			"alt": ""
+		}
+	}
+]

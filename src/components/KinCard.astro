@@ -1,0 +1,11 @@
+---
+const { name, source, image } = Astro.props;
+---
+
+<li class="flex flex-col gap-4 rounded bg-textColor/25 pb-4 text-center shadow-md">
+	<img class="aspect-square w-full rounded-t object-cover" src={image.url} alt={image.alt} /><h3
+		class="mx-4 text-xl font-bold"
+	>
+		{name}
+	</h3>{source && <p class="mx-4 text-sm italic">{source}</p>}
+</li>
