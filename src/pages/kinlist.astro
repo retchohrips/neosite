@@ -1,51 +1,48 @@
 ---
 import PageLayout from "@/layouts/Base";
 import KinCard from "@/components/KinCard";
-import KL from "../../public/kinlist.json";
+import type { Kinlist, Kin } from "@/types";
+import list from "../../public/kinlist.json";
+
+const kinlist: Kinlist = list as Kinlist;
+
+function sortByLastName(a: Kin, b: Kin) {
+	// ignore case and split to array on spaces
+	const nameA = a.name.toUpperCase().split(" ");
+	const nameB = b.name.toUpperCase().split(" ");
+
+	if (nameA[1] === undefined || nameB[1] === undefined) {
+		return 0;
+	}
+
+	if (nameA[1] < nameB[1]) {
+		return -1;
+	}
+	if (nameA[1] > nameB[1]) {
+		return 1;
+	}
+
+	// names must be equal
+	return 0;
+}
 ---
 
 <PageLayout meta={{ title: "Kinlist" }}>
 	<h1 class="mb-6 text-center text-2xl font-bold">The Big Deal Ones</h1>
 	<ul class="grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_15ch),_1fr))] gap-4">
 		{
-			KL.filter((a) => a.tier === 1)
-				.sort((a, b) => {
-					// ignore case and split to array on spaces
-					const nameA = a.name.toUpperCase().split(" ");
-					const nameB = b.name.toUpperCase().split(" ");
-
-					if (nameA[1] < nameB[1]) {
-						return -1;
-					}
-					if (nameA[1] > nameB[1]) {
-						return 1;
-					}
-
-					// names must be equal
-					return 0;
-				})
+			kinlist
+				.filter((a) => a.tier === 1)
+				.sort(sortByLastName)
 				.map(({ name, source, image }) => <KinCard name={name} source={source} image={image} />)
 		}
 	</ul>
 	<h1 class="mb-6 mt-10 text-center text-2xl font-bold">Haha Just Like Me :3</h1>
 	<ul class="grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_15ch),_1fr))] gap-4">
 		{
-			KL.filter((a) => a.tier === 2)
-				.sort((a, b) => {
-					// ignore case and split to array on spaces
-					const nameA = a.name.toUpperCase().split(" ");
-					const nameB = b.name.toUpperCase().split(" ");
-
-					if (nameA[1] < nameB[1]) {
-						return -1;
-					}
-					if (nameA[1] > nameB[1]) {
-						return 1;
-					}
-
-					// names must be equal
-					return 0;
-				})
+			kinlist
+				.filter((a) => a.tier === 2)
+				.sort(sortByLastName)
 				.map(({ name, source, image }) => <KinCard name={name} source={source} image={image} />)
 		}
 	</ul>
@@ -54,44 +51,18 @@ import KL from "../../public/kinlist.json";
 	</h1>
 	<ul class="grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_15ch),_1fr))] gap-4">
 		{
-			KL.filter((a) => a.tier === 3)
-				.sort((a, b) => {
-					// ignore case and split to array on spaces
-					const nameA = a.name.toUpperCase().split(" ");
-					const nameB = b.name.toUpperCase().split(" ");
-
-					if (nameA[1] < nameB[1]) {
-						return -1;
-					}
-					if (nameA[1] > nameB[1]) {
-						return 1;
-					}
-
-					// names must be equal
-					return 0;
-				})
+			kinlist
+				.filter((a) => a.tier === 3)
+				.sort(sortByLastName)
 				.map(({ name, source, image }) => <KinCard name={name} source={source} image={image} />)
 		}
 	</ul>
 	<h1 class="mb-6 mt-10 text-center text-2xl font-bold">Otherkin / Therian</h1>
 	<ul class="grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_15ch),_1fr))] gap-4">
 		{
-			KL.filter((a) => a.tier === "other")
-				.sort((a, b) => {
-					// ignore case and split to array on spaces
-					const nameA = a.name.toUpperCase();
-					const nameB = b.name.toUpperCase();
-
-					if (nameA < nameB) {
-						return -1;
-					}
-					if (nameA > nameB) {
-						return 1;
-					}
-
-					// names must be equal
-					return 0;
-				})
+			kinlist
+				.filter((a) => a.tier === "other")
+				.sort(sortByLastName)
 				.map(({ name, image }) => <KinCard name={name} image={image} />)
 		}
 	</ul>

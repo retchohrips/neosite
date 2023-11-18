@@ -83,3 +83,15 @@ export type Summary = {
 	"content-type": string;
 	value: string;
 };
+
+export type Kin = {
+	tier: number | string;
+	name: string;
+	source: string;
+	image: {
+		url: string;
+		alt: string;
+	};
+};
+
+export type Kinlist = Kin[];
