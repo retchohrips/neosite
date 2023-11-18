@@ -2,47 +2,231 @@
 import { Image } from "astro:assets";
 
 import PageLayout from "@/layouts/Base";
-import aboutImg from "@/assets/about-astro.png";
 
 const meta = {
 	title: "About",
 	description: "I'm a starter theme for Astro.build",
 };
+
+const profileResponse = await fetch(
+	"https://en.pronouns.page/api/profile/get/retchohrips?version=2",
+);
+const profileData = await profileResponse.json();
+
+const pronounResponse = await fetch("https://en.pronouns.page/api/pronouns/");
+const pronounData = await pronounResponse.json();
+
+const names = profileData.profiles.en.names;
+const yesNames = names
+	.filter((obj: { opinion: string }) => obj.opinion == "yes")
+	.map((ele: { value: never }) => ele.value);
+const okNames = names
+	.filter((obj: { opinion: string }) => obj.opinion == "meh" || obj.opinion == "circle")
+	.map((ele: { value: never }) => ele.value);
+
+const pronouns = profileData.profiles.en.pronouns
+	.filter(
+		(obj: { opinion: string }) =>
+			obj.opinion == "yes" || obj.opinion == "meh" || obj.opinion == "circle",
+	)
+	.map((ele: { value: never }) => ele.value);
+
+const okPronouns = pronouns.map((pronoun: string) =>
+	Object.values(pronounData[pronoun].morphemes).slice(0, 3).join("/"),
+);
+
+{
+	/*TODO: #15 turn all the below sorting into a function*/
+}
+
+let music = [
+	"My Chemical Romance",
+	"Mitski",
+	"Fall Out Boy",
+	"CAKE",
+	"The Front Bottoms",
+	"Crywank",
+	"Penelope Scott",
+	"Lemon Demon",
+	"Ethel Cain",
+	"Against Me!",
+	"Nirvana",
+	"The Scary Jokes",
+	"Car Seat Headrest",
+	"Will Wood",
+	"I DONT KNOW HOW BUT THEY FOUND ME",
+	"Hole",
+	"The Dresden Dolls",
+	"Laura Les",
+	"Hozier",
+	"Florence + the Machine",
+];
+
+music = music
+	.slice()
+	.sort((a, b) => {
+		var articles = ["a", "an", "the"],
+			re = new RegExp("^(?:(" + articles.join("|") + ") )(.*)$"), // e.g. /^(?:(foo|bar) )(.*)$/
+			replacor = function (_$0: never, $1: string, $2: string) {
+				return $2 + ", " + $1;
+			};
+		a = a.toLowerCase().replace(re, replacor);
+		b = b.toLowerCase().replace(re, replacor);
+		return a === b ? 0 : a < b ? -1 : 1;
+	})
+	.join(", ");
+
+let games = [
+	"Fallout",
+	"Resident Evil",
+	"The Sims",
+	"Perfect Vermin",
+	"DOOM",
+	"Carrion",
+	"Danganronpa",
+];
+
+games = games
+	.slice()
+	.sort((a, b) => {
+		var articles = ["a", "an", "the"],
+			re = new RegExp("^(?:(" + articles.join("|") + ") )(.*)$"), // e.g. /^(?:(foo|bar) )(.*)$/
+			replacor = function (_$0: never, $1: string, $2: string) {
+				return $2 + ", " + $1;
+			};
+		a = a.toLowerCase().replace(re, replacor);
+		b = b.toLowerCase().replace(re, replacor);
+		return a === b ? 0 : a < b ? -1 : 1;
+	})
+	.join(", ");
+
+let movies = [
+	"Back to the Future",
+	"Fight Club",
+	"Heathers",
+	"Beetlejuice",
+	"Men In Black",
+	"American Psycho",
+	"Scream",
+];
+
+movies = movies
+	.slice()
+	.sort((a, b) => {
+		var articles = ["a", "an", "the"],
+			re = new RegExp("^(?:(" + articles.join("|") + ") )(.*)$"), // e.g. /^(?:(foo|bar) )(.*)$/
+			replacor = function (_$0: never, $1: string, $2: string) {
+				return $2 + ", " + $1;
+			};
+		a = a.toLowerCase().replace(re, replacor);
+		b = b.toLowerCase().replace(re, replacor);
+		return a === b ? 0 : a < b ? -1 : 1;
+	})
+	.join(", ");
+
+let tv = [
+	"American Horror Story",
+	"Chainsaw Man",
+	"Community",
+	"Star Trek",
+	"Better Call Saul",
+	"Breaking Bad",
+	"RuPaul's Drag Race",
+	"Death Note",
+	"What We Do in the Shadows",
+	"The Umbrella Academy",
+];
+
+tv = tv
+	.slice()
+	.sort((a, b) => {
+		var articles = ["a", "an", "the"],
+			re = new RegExp("^(?:(" + articles.join("|") + ") )(.*)$"), // e.g. /^(?:(foo|bar) )(.*)$/
+			replacor = function (_$0: never, $1: string, $2: string) {
+				return $2 + ", " + $1;
+			};
+		a = a.toLowerCase().replace(re, replacor);
+		b = b.toLowerCase().replace(re, replacor);
+		return a === b ? 0 : a < b ? -1 : 1;
+	})
+	.join(", ");
+
+let books = ["Invisible Monsters"];
+
+books = books
+	.slice()
+	.sort((a, b) => {
+		var articles = ["a", "an", "the"],
+			re = new RegExp("^(?:(" + articles.join("|") + ") )(.*)$"), // e.g. /^(?:(foo|bar) )(.*)$/
+			replacor = function (_$0: never, $1: string, $2: string) {
+				return $2 + ", " + $1;
+			};
+		a = a.toLowerCase().replace(re, replacor);
+		b = b.toLowerCase().replace(re, replacor);
+		return a === b ? 0 : a < b ? -1 : 1;
+	})
+	.join(", ");
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
 		<h1 class="title">About</h1>
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<div class="flex justify-center">
-			<Image
-				src={aboutImg}
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				loading="eager"
-				fetchpriority="high"
-			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
+		<ul>
+			<li>
+				<strong>Names:</strong>
+
+				{
+					yesNames.map((name: unknown) => (
+						<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last:after:content-['']">
+							{name}
+						</span>
+					))
+				}
+
+				{
+					okNames.map((name: unknown) => (
+						<span class="ml-[1ch] after:content-[','] last-of-type:after:content-['']">{name}</span>
+					))
+				}
+			</li>
+			<strong>Pronouns:</strong>
+			{
+				okPronouns.map((pronoun: unknown) => (
+					<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last-of-type:font-normal last-of-type:text-textColor last-of-type:after:content-['']">
+						{pronoun}
+					</span>
+				))
+			}
+			<li>
+				<strong class="mr-[1ch]">Age:</strong>
+				{profileData.profiles.en.age}
+			</li>
+			<li>
+				{/* TODO: #13 Make and link pride page */}
+				<strong class="mr-[1ch]">Gender:</strong><a class="cactus-link" href="/"
+					>oh boy that is a can of worms</a
+				>
+			</li>
+			<li>
+				<strong class="mr-[1ch]">Orientation:</strong><a class="cactus-link" href="/"
+					>wouldn't you know it another can of worms</a
+				>
+			</li>
 		</ul>
-		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="github repository">repo</a
-			> if you like me!
-		</p>
+		{/* TODO: #14 Highlight absolute favorites */}
+		<h1 class="title">Things I Like</h1>
+		<ul>
+			<li class="my-2">
+				<strong class="mr-[1ch]">Books:</strong>{books}
+			</li>
+			<li class="my-2">
+				<strong class="mr-[1ch]">Games:</strong>{games}
+			</li>
+			<li class="my-2"><strong class="mr-[1ch]">Movies:</strong>{movies}</li>
+			<li class="my-2">
+				<strong class="mr-[1ch]">Music:</strong>{music}
+			</li>
+			<li class="my-2"><strong class="mr-[1ch]">TV:</strong>{tv}</li>
+		</ul>
 	</div>
 </PageLayout>
