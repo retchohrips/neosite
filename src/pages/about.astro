@@ -5,7 +5,7 @@ import PageLayout from "@/layouts/Base";
 
 const meta = {
 	title: "About",
-	description: "I'm a starter theme for Astro.build",
+	description: "About me!",
 };
 
 const profileResponse = await fetch(
@@ -19,10 +19,10 @@ const pronounData = await pronounResponse.json();
 const names = profileData.profiles.en.names;
 const yesNames = names
 	.filter((obj: { opinion: string }) => obj.opinion == "yes")
-	.map((ele: { value: never }) => ele.value);
+	.map((ele: { value: string }) => ele.value);
 const okNames = names
 	.filter((obj: { opinion: string }) => obj.opinion == "meh" || obj.opinion == "circle")
-	.map((ele: { value: never }) => ele.value);
+	.map((ele: { value: string }) => ele.value);
 
 const pronouns = profileData.profiles.en.pronouns
 	.filter(
@@ -127,24 +127,23 @@ let books = ["Invisible Monsters"].sort(compare).join(", ");
 		<ul>
 			<li>
 				<strong>Names:</strong>
-
+				{/*Prettier bug results in extra whitespace here*/}
 				{
-					yesNames.map((name: unknown) => (
+					yesNames.map((name: string) => (
 						<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last:after:content-['']">
 							{name}
 						</span>
 					))
 				}
-
 				{
-					okNames.map((name: unknown) => (
+					okNames.map((name: string) => (
 						<span class="ml-[1ch] after:content-[','] last-of-type:after:content-['']">{name}</span>
 					))
 				}
 			</li>
 			<strong>Pronouns:</strong>
 			{
-				okPronouns.map((pronoun: unknown) => (
+				okPronouns.map((pronoun: string) => (
 					<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last-of-type:font-normal last-of-type:text-textColor last-of-type:after:content-['']">
 						{pronoun}
 					</span>
@@ -156,16 +155,19 @@ let books = ["Invisible Monsters"].sort(compare).join(", ");
 			</li>
 			<li>
 				{/* TODO: #13 Make and link pride page */}
-				<strong class="mr-[1ch]">Gender:</strong><a class="cactus-link" href="/"
+				<strong class="mr-[1ch]">Gender:</strong><a class="cactus-link" href="/pride#gender"
 					>oh boy that is a can of worms</a
 				>
 			</li>
 			<li>
-				<strong class="mr-[1ch]">Orientation:</strong><a class="cactus-link" href="/"
-					>wouldn't you know it another can of worms</a
+				<strong class="mr-[1ch]">Orientation:</strong><a
+					class="cactus-link"
+					href="/pride#orientation">wouldn't you know it another can of worms</a
 				>
 			</li>
+			<li><strong><a class="cactus-link" href="/kinlist">Kinlist!!</a></strong></li>
 		</ul>
+
 		{/* TODO: #14 Highlight absolute favorites */}
 		<h1 class="title">Things I Like</h1>
 		<ul>
