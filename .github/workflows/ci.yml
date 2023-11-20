@@ -2,10 +2,11 @@ name: ci
 
 on:
   push:
-    branches: [main]
+    branches: [main, renovate/**]
   pull_request:
-    branches: [main]
+    branches: [main, renovate/**]
   merge_group:
+    branches: [main, renovate/**]
 
 permissions:
   contents: read
