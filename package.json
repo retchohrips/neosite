@@ -38,9 +38,9 @@
 ],
   "devDependencies": {
     "@astrojs/check": "0.3.1",
-    "@commitlint/cli": "18.4.2",
-    "@commitlint/config-conventional": "18.4.2",
-    "@commitlint/prompt": "18.4.2",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
+    "@commitlint/prompt": "18.4.3",
     "@pagefind/default-ui": "1.0.4",
     "@resvg/resvg-js": "2.6.0",
     "@tailwindcss/aspect-ratio": "0.4.2",
