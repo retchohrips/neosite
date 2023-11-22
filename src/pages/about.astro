@@ -127,26 +127,21 @@ let books = ["Invisible Monsters"].sort(compare).join(", ");
 		<ul>
 			<li>
 				<strong>Names:</strong>
-				{/*Prettier bug results in extra whitespace here*/}
 				{
-					yesNames.map((name: string) => (
-						<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last:after:content-['']">
-							{name}
-						</span>
+					// prettier-ignore
+					yesNames.map((name: string) => (<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last:after:content-['']">{name}</span>
 					))
 				}
 				{
-					okNames.map((name: string) => (
-						<span class="ml-[1ch] after:content-[','] last-of-type:after:content-['']">{name}</span>
+					// prettier-ignore
+					okNames.map((name: string) => (<span class="ml-[1ch] after:content-[','] last-of-type:after:content-['']">{name}</span>
 					))
 				}
 			</li>
 			<strong>Pronouns:</strong>
 			{
-				okPronouns.map((pronoun: string) => (
-					<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last-of-type:font-normal last-of-type:text-textColor last-of-type:after:content-['']">
-						{pronoun}
-					</span>
+				// prettier-ignore
+				okPronouns.map((pronoun: string) => (<span class="ml-[1ch] font-bold text-accent after:font-normal after:text-textColor after:content-[','] last-of-type:font-normal last-of-type:text-textColor last-of-type:after:content-['']">{pronoun}</span>
 				))
 			}
 			<li>
