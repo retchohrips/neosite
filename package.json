@@ -22,7 +22,7 @@
     "extends": "@commitlint/config-conventional"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.4",
+    "@astrojs/mdx": "^2.0.0",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.3",
